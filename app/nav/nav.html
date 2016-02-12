@@ -1,0 +1,19 @@
+<div ng-controller="NavCtrl as navCtrl" id="nav">
+    <div style="flex: 2;">
+        <img src="images/logo.gif" height="50px" ng-click="appCtrl.goTo('/main')" alt="" style="cursor: pointer">
+    </div>
+    <div style="flex: 8; display: flex;flex-direction: column">
+        <div style="display: flex;flex-direction: row; justify-content: flex-end; align-items: center; height: 50px">
+
+            <div id="search-desktop-container">
+                <i class="fa-custom fa fa-search"></i>
+                <input id="search-desktop" ng-model="appCtrl.filtro" type="text" placeholder="Buscar..."></i>
+            </div>
+            <i class="fa-custom fa fa-th-large" title="Mostrar tarjetas" ng-click="appCtrl.showLista(false)"></i>
+            <i class="fa-custom fa fa-list" title="Mostrar lista" ng-click="appCtrl.showLista(true)"></i>
+            <i class="fa-custom fa fa-sign-in" title="Login" ng-click="appCtrl.goTo('/login')"></i>
+            <i class="fa-custom fa fa-lock" title="Administración"
+               ng-click="appCtrl.goTo('/administracion');"></i>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div ng-controller="MainCtrl as mainCtrl" id="main">
+
+
+    <!--<h1 style="width: 100%;-->
+    <!--text-align: center;-->
+    <!--font-size: 70px;-->
+    <!--font-weight: 700;-->
+    <!--color: whitesmoke;">HACE RUIDO</h1>-->
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center">
+        <img class="logo-main" src="images/logo.svg" height="200px" ng-click="appCtrl.goTo('/main')" alt="">
+    </div>
+    <h2 style="width: 100%;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 250px;
+    font-weight: 700;
+    color: whitesmoke;">Palabras que suenan</h2>
+
+    <div id="list-start"></div>
+    <div ng-if="!appCtrl.lista" ac-animate animation-in="parrafo-in" correction-out="-100" class="main-post"
+         ng-repeat="post in appCtrl.posts | filter:appCtrl.filtro"
+         ng-click="mainCtrl.ver(post.key); appCtrl.filtro='';">
+        <div class="main-post-title">
+            <div>
+                <span class="md-title">{{post.value.titulo}}</span>
+                <span class="md-subhead">{{-1 * post.value.fecha | date}}</span>
+            </div>
+        </div>
+        <div class="main-post-content">
+            <div ng-bind-html="post.value.detalle"></div>
+        </div>
+        <br>
+        <br>
+    </div>
+    <div ng-if="appCtrl.lista" ac-animate animation-in="parrafo-in" correction-out="-100" class="main-post post-list"
+         ng-repeat="post in appCtrl.posts | filter:appCtrl.filtro"
+         ng-click="mainCtrl.ver(post.key); appCtrl.filtro='';"
+         style="justify-content: space-between;">
+        <span class="md-title">{{post.value.titulo}}</span>
+        <span class="md-subhead">{{-1 * post.value.fecha | date}}</span>
+    </div>
+</div>

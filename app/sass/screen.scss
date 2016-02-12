@@ -1,0 +1,292 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "compass";
+
+
+*, body {
+
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: whitesmoke;
+}
+
+#index-view {
+  margin-top: 50px;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  width: 100%;
+}
+
+#back-image {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+#main {
+  margin-top: 200px;
+  min-width: 100%;
+}
+
+.main-post {
+
+  background-color: white;
+  margin: 10px 0 10px 0;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+
+  .main-post-title {
+    width: 100%;
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 10px 0 10px 0;
+      span {
+        text-align: center;
+      }
+      span:nth-child(1) {
+        margin: 20px 0 10px 0;
+        font-size: 35px;
+        text-transform: uppercase;
+      }
+      span:nth-child(2) {
+        font-size: 26px;
+        color: darkgray;
+      }
+    }
+  }
+
+  .main-post-content {
+    margin: 0 20px 20px 20px;
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 30px;
+  }
+}
+
+#comentarios {
+  padding: 10px;
+
+  .comentario {
+    border-top: 1px lightgray solid;
+  }
+  .comentario:nth-child(1) {
+    border-top: 0px solid;
+  }
+  .comentario-nombre {
+    margin: 10px 0 10px 0;
+    color: #E65100;
+    font-weight: bold;
+  }
+
+  .comentario-fecha {
+    margin: 10px 0 10px 0;
+    color: darkgray;
+    font-size: 16px;
+  }
+
+  .comentario-comentario {
+    margin: 20px 0 20px 0;
+    font-size: 20px;
+  }
+}
+
+#post, #comentarios {
+
+  background-color: white;
+  margin: 10px 0 10px 0;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+
+}
+
+#detalle {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+#search-desktop {
+  border: solid 0px;
+  width: 60px;
+  background-color: rgba(0, 0, 0, 0);
+
+  border-bottom: 1px solid white;
+  color: white;
+
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  -ms-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s;
+  margin-right: 20px;
+
+}
+
+#search-desktop:focus {
+  width: 200px !important;
+  outline: none;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+
+  .fa{
+    color: black !important;
+  }
+
+  span {
+    margin: 10px;
+  }
+}
+
+.login, #registro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  #login {
+
+  }
+}
+
+.login-input-container{
+  margin: 10px 0 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  input{
+    min-width: 60%;
+  }
+}
+
+.fa-custom {
+  color: white;
+  margin: 0 10px 0 10px;
+  cursor: pointer;
+}
+
+.ta-text {
+  height: 100px !important;
+  min-height: 100px !important;
+  margin: 10px 0 10px 0;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.ta-bind {
+  background-color: white;
+  font-size: 16px;
+}
+
+.btn-custom {
+  border: 0 solid;
+  background-color: #E65100;
+  color: white;
+  padding: 5px;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+#back-top{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 10;
+  i{
+    color: white;
+  }
+}
+
+
+.parrafo-in {
+  -webkit-animation: parrafo-in 1s ease;
+  -o-animation: parrafo-in 1s ease;
+  animation: parrafo-in 1s ease;
+  -webkit-transform: translate(0px, 0);
+  -moz-transform: translate(0px, 0);
+  -ms-transform: translate(0px, 0);
+  -o-transform: translate(0px, 0);
+  transform: translate(0px, 0);
+}
+
+.logo-main {
+  -webkit-animation: logo-in 1s ease;
+  -o-animation: logo-in 1s ease;
+  animation: logo-in 1s ease;
+  
+}
+
+@keyframes logo-in {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+  
+}
+
+@keyframes parrafo-in {
+  0% {
+
+    opacity: 0;
+    -webkit-transform: translate(-1000px, 0);
+    -moz-transform: translate(-1000px, 0);
+    -ms-transform: translate(-1000px, 0);
+    -o-transform: translate(-1000px, 0);
+    transform: translate(-1000px, 0);
+  }
+
+  65% {
+    opacity: .1;
+
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0);
+    -moz-transform: translate(0px, 0);
+    -ms-transform: translate(0px, 0);
+    -o-transform: translate(0px, 0);
+    transform: translate(0px, 0);
+
+  }
+
+}
+
+#nav {
+  z-index: 100;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  background-color: #562F2E;
+  display: flex;
+  flex-direction: row;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}

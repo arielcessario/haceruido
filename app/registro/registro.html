@@ -1,0 +1,22 @@
+<div ng-controller="RegistroCtrl as registroCtrl" id="registro">
+    <div>
+        <div class="login-input-container">
+            <label>Nombre</label>
+            <input ng-model="registroCtrl.nombre" type="text">
+        </div>
+        <div class="login-input-container">
+            <label>Email</label>
+            <input ng-model="registroCtrl.email" type="email">
+        </div>
+
+        <div class="login-input-container">
+            <label>Password</label>
+            <input id="password" ng-model="registroCtrl.password" type="text">
+        </div>
+        <div>
+            <md-button class="btn-custom" ng-click="registroCtrl.createUser()">Crear</md-button>
+            <!--<md-button class="md-raised">Facebook</md-button>-->
+            <!--<md-button class="md-raised">Google</md-button>-->
+        </div>
+    </div>
+</div>

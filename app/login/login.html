@@ -1,0 +1,20 @@
+<div ng-controller="LoginCtrl as loginCtrl" ng-cloak class="login">
+    <div id="login">
+        <div class="login-input-container">
+            <label>Email</label>
+            <input ng-model="loginCtrl.email" type="email">
+        </div>
+
+        <div class="login-input-container">
+            <label>Password</label>
+            <input id="password" ng-model="loginCtrl.password" type="text">
+        </div>
+        <div>
+            <button class="btn-custom" ng-click="loginCtrl.login()">Ingresar</button>
+            <button class="btn-custom" ng-click="loginCtrl.loginFacebook()">Facebook</button>
+            <button class="btn-custom" ng-click="loginCtrl.loginGoogle()">Google</button>
+            <button class="btn-custom" ng-click="appCtrl.goTo('/registro')">Nuevo Usuario</button>
+        </div>
+    </div>
+
+</div>

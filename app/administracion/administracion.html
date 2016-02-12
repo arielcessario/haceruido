@@ -1,0 +1,34 @@
+<div ng-controller="AdministracionCtrl as administracionCtrl" style="margin-top: 100px;">
+    <div>
+        <div>
+            <div>
+                <label>Titulo</label>
+                <input ng-model="administracionCtrl.post.value.titulo" type="text">
+            </div>
+            <div>
+                <label>Fecha</label>
+                <input ng-model="administracionCtrl.post.value.fecha" type="date">
+            </div>
+        </div>
+        <div>
+            <label>Detalle</label>
+            <div text-angular ng-model="administracionCtrl.post.value.detalle"></div>
+
+        </div>
+
+        <div>
+            <button class="md-raised" ng-click="administracionCtrl.create()">Guardar</button>
+            <!--<button class="md-raised" ng-click="administracionCtrl.remove()">Eliminar</button>-->
+            <button class="md-raised" ng-click="administracionCtrl.cancelar()">Cancelar</button>
+        </div>
+
+        <div class="main-post post-list"
+             ng-repeat="post in administracionCtrl.posts | filter:appCtrl.filtro"
+             ng-click="administracionCtrl.selectPost(post);">
+            <span class="md-title" style="flex: 15;">{{post.value.titulo}}</span>
+            <span class="md-subhead" style="flex: 3;">{{ -1 * post.value.fecha | date}}</span>
+            <span style="flex: 1;"><i class="fa fa-trash" ng-click="administracionCtrl.remove(post)"></i></span>
+        </div>
+    </div>
+
+</div>

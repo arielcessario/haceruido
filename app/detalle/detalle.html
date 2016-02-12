@@ -1,0 +1,31 @@
+<div ng-controller="DetalleCtrl as detalleCtrl" id="detalle">
+
+    <div class="main-post">
+        <div class="main-post-title">
+            <div>
+                <span class="md-title">{{detalleCtrl.post.value.titulo}}</span>
+                <span class="md-subhead">{{-1 * detalleCtrl.post.value.fecha | date}}</span>
+            </div>
+        </div>
+        <div class="main-post-content">
+            <div ng-bind-html="detalleCtrl.post.value.detalle"></div>
+        </div>
+        <br>
+        <br>
+    </div>
+
+    <div id="comentario">
+        <div text-angular ng-model="detalleCtrl.comentario"></div>
+        <button class="btn-custom" ng-click="detalleCtrl.comentar(appCtrl.authData)">Comentar</button>
+    </div>
+
+    <h2 style="width: 100%; margin: 10px 0 10px 0; text-align: center; font-weight: bold; font-size: 30px;">Comentarios
+        Anteriores</h2>
+    <div id="comentarios">
+        <div ng-repeat="comentario in detalleCtrl.post.value.comentarios" class="comentario">
+            <div class="comentario-nombre">{{comentario.nombre}}</div>
+            <div class="comentario-comentario" ng-bind-html="comentario.comentario"></div>
+            <div class="comentario-fecha">{{comentario.fecha | date}}</div>
+        </div>
+    </div>
+</div>
