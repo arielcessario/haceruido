@@ -208,11 +208,15 @@
             var post = {key: snap.key(), value: snap.val()};
             post.value.cant_comments = snap.child('/comentarios').numChildren();
             vm.posts.push(post);
+
+            if (!$scope.$$phase) {
+                $scope.$apply();
+            }
         });
 
 // download the first 20 records
         function addPostInfinite() {
-            scrollRef.scroll.next(4);
+            scrollRef.scroll.next(2);
         }
 
         addPostInfinite();

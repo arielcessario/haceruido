@@ -40,7 +40,9 @@
             ref.child("comentarios").push().set(
                 {
                     comentario: vm.comentario,
-                    fecha: Firebase.ServerValue.TIMESTAMP
+                    fecha: Firebase.ServerValue.TIMESTAMP,
+                    nombre: nombre,
+                    email: email
                 }
             );
 
