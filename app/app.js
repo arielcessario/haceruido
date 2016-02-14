@@ -216,7 +216,7 @@
 
 // download the first 20 records
         function addPostInfinite() {
-            scrollRef.scroll.next(2);
+            scrollRef.scroll.next(4);
         }
 
         addPostInfinite();
