@@ -106,8 +106,10 @@
         }
 
         function create() {
+            console.log('entra');
 
             if (vm.post.value.titulo == undefined) {
+                console.log('entra');
                 return;
             }
 

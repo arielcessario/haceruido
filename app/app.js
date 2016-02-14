@@ -133,7 +133,6 @@
 
             if (val) {
                 porc = ($window.scrollY * 100) / $document[0].body.scrollHeight;
-                console.log(porc);
 
                 if (porc > 30) {
                     addPostInfinite();
@@ -205,7 +204,10 @@
 
 // establish an event listener as you would for any Firebase ref
         scrollRef.on('child_added', function (snap) {
-            vm.posts.push({key: snap.key(), value: snap.val()});
+
+            var post = {key: snap.key(), value: snap.val()};
+            post.value.cant_comments = snap.child('/comentarios').numChildren();
+            vm.posts.push(post);
         });
 
 // download the first 20 records

@@ -54,6 +54,7 @@
                 userRef.once("value", function (snapshot) {
                     var exist = snapshot.exists();
 
+
                     if (!exist) {
                         // save the user's profile into the database so we can list users,
                         // use them in Security and Firebase Rules, and show profiles

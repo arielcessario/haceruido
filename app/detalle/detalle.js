@@ -30,7 +30,7 @@
         });
 
         function comentar(authData) {
-            if(!authData){
+            if(!ref.getAuth()){
                 $location.path('/login');
                 return;
             }
