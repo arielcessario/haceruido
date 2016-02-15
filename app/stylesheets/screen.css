@@ -233,7 +233,16 @@ body {
   font-size: 16px;
 }
 
-/* line 223, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
+.text-administracion .ta-text {
+  height: 400px !important;
+}
+/* line 227, ../sass/screen.scss */
+.text-administracion .ta-bind {
+  height: 400px !important;
+}
+
+/* line 232, ../sass/screen.scss */
 .btn-custom {
   border: 0 solid;
   background-color: #E65100;
@@ -244,19 +253,19 @@ body {
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
-/* line 233, ../sass/screen.scss */
+/* line 242, ../sass/screen.scss */
 #back-top {
   position: fixed;
   bottom: 40px;
   right: 40px;
   z-index: 10;
 }
-/* line 238, ../sass/screen.scss */
+/* line 247, ../sass/screen.scss */
 #back-top i {
   color: white;
 }
 
-/* line 243, ../sass/screen.scss */
+/* line 252, ../sass/screen.scss */
 .administracion-input {
   width: 100%;
   display: flex;
@@ -266,7 +275,7 @@ body {
   font-weight: 900;
 }
 
-/* line 253, ../sass/screen.scss */
+/* line 262, ../sass/screen.scss */
 .parrafo-in {
   -webkit-animation: parrafo-in 1s ease;
   -o-animation: parrafo-in 1s ease;
@@ -278,7 +287,7 @@ body {
   transform: translate(0px, 0);
 }
 
-/* line 264, ../sass/screen.scss */
+/* line 273, ../sass/screen.scss */
 .logo-main {
   min-width: 360px;
   width: 50%;
@@ -316,7 +325,7 @@ body {
     transform: translate(0px, 0);
   }
 }
-/* line 312, ../sass/screen.scss */
+/* line 321, ../sass/screen.scss */
 #nav {
   z-index: 100;
   width: 100%;
@@ -332,7 +341,7 @@ body {
   -webkit-transform: translateZ(0);
 }
 
-/* line 327, ../sass/screen.scss */
+/* line 336, ../sass/screen.scss */
 #side-nav {
   z-index: 90;
   height: 100%;
@@ -354,7 +363,7 @@ body {
   transition: all 0.4s;
 }
 
-/* line 349, ../sass/screen.scss */
+/* line 358, ../sass/screen.scss */
 .menu-item {
   margin: 5px 0 5px 10px;
   font-family: 'Poppins', sans-serif;
@@ -362,18 +371,18 @@ body {
   color: black;
   padding: 10px;
 }
-/* line 356, ../sass/screen.scss */
+/* line 365, ../sass/screen.scss */
 .menu-item span {
   margin-left: 15px;
 }
 
-/* line 363, ../sass/screen.scss */
+/* line 372, ../sass/screen.scss */
 .menu-item:hover {
   background-color: #562F2E;
   color: white;
 }
 
-/* line 368, ../sass/screen.scss */
+/* line 377, ../sass/screen.scss */
 .side-nav-closed {
   -webkit-transform: translateX(100%) !important;
   -moz-transform: translateX(100%) !important;
@@ -382,7 +391,7 @@ body {
   transform: translateX(100%) !important;
 }
 
-/* line 380, ../sass/screen.scss */
+/* line 389, ../sass/screen.scss */
 .nav-button {
   flex: 1;
   margin-right: 15px;
@@ -395,7 +404,7 @@ body {
   transform-style: preserve-3D;
   cursor: pointer;
 }
-/* line 395, ../sass/screen.scss */
+/* line 404, ../sass/screen.scss */
 .nav-button div {
   cursor: pointer;
   width: 26px;
@@ -409,7 +418,7 @@ body {
   -o-transition: all 0.4s;
   transition: all 0.4s;
 }
-/* line 409, ../sass/screen.scss */
+/* line 418, ../sass/screen.scss */
 .nav-button .nav-button-top-transformed {
   -webkit-transform: rotate(45deg) translateY(11px);
   -moz-transform: rotate(45deg) translateY(11px);
@@ -417,11 +426,11 @@ body {
   -o-transform: rotate(45deg) translateY(11px);
   transform: rotate(45deg) translateY(11px);
 }
-/* line 416, ../sass/screen.scss */
+/* line 425, ../sass/screen.scss */
 .nav-button .nav-button-mid-transformed {
   opacity: 0;
 }
-/* line 419, ../sass/screen.scss */
+/* line 428, ../sass/screen.scss */
 .nav-button .nav-button-bot-transformed {
   -webkit-transform: rotate(-45deg) translateY(-12px);
   -moz-transform: rotate(-45deg) translateY(-12px);
