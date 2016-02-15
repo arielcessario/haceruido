@@ -330,7 +330,8 @@ body {
   top: 0;
   right: 0;
   min-width: 200px;
-  width: 30%;
+  width: 100%;
+  max-width: 300px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -343,26 +344,26 @@ body {
   transition: all 0.4s;
 }
 
-/* line 338, ../sass/screen.scss */
+/* line 339, ../sass/screen.scss */
 .menu-item {
   margin: 5px 0 5px 10px;
   font-family: 'Poppins', sans-serif;
-  font-size: 34px;
+  font-size: 4vmin !important;
   color: black;
   padding: 10px;
 }
-/* line 345, ../sass/screen.scss */
+/* line 346, ../sass/screen.scss */
 .menu-item span {
   margin-left: 15px;
 }
 
-/* line 352, ../sass/screen.scss */
+/* line 353, ../sass/screen.scss */
 .menu-item:hover {
   background-color: #562F2E;
   color: white;
 }
 
-/* line 357, ../sass/screen.scss */
+/* line 358, ../sass/screen.scss */
 .side-nav-closed {
   -webkit-transform: translateX(100%) !important;
   -moz-transform: translateX(100%) !important;
@@ -371,7 +372,7 @@ body {
   transform: translateX(100%) !important;
 }
 
-/* line 369, ../sass/screen.scss */
+/* line 370, ../sass/screen.scss */
 .nav-button {
   flex: 1;
   margin-right: 15px;
@@ -384,7 +385,7 @@ body {
   transform-style: preserve-3D;
   cursor: pointer;
 }
-/* line 384, ../sass/screen.scss */
+/* line 385, ../sass/screen.scss */
 .nav-button div {
   cursor: pointer;
   width: 26px;
@@ -398,7 +399,7 @@ body {
   -o-transition: all 0.4s;
   transition: all 0.4s;
 }
-/* line 398, ../sass/screen.scss */
+/* line 399, ../sass/screen.scss */
 .nav-button .nav-button-top-transformed {
   -webkit-transform: rotate(45deg) translateY(11px);
   -moz-transform: rotate(45deg) translateY(11px);
@@ -406,11 +407,11 @@ body {
   -o-transform: rotate(45deg) translateY(11px);
   transform: rotate(45deg) translateY(11px);
 }
-/* line 405, ../sass/screen.scss */
+/* line 406, ../sass/screen.scss */
 .nav-button .nav-button-mid-transformed {
   opacity: 0;
 }
-/* line 408, ../sass/screen.scss */
+/* line 409, ../sass/screen.scss */
 .nav-button .nav-button-bot-transformed {
   -webkit-transform: rotate(-45deg) translateY(-12px);
   -moz-transform: rotate(-45deg) translateY(-12px);
