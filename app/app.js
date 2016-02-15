@@ -120,6 +120,7 @@
         vm.offTop = false;
         vm.posts = [];
         vm.rol = 1;
+        vm.menu_mobile_open = false;
 
         if (vm.authData) {
             var refUser = new Firebase('https://estomehaceruido.firebaseio.com/users/' + vm.authData.uid);
@@ -162,6 +163,8 @@
             //Note: Use this in a directive, not with document.getElementById
             var someElement = angular.element(document.getElementById(id));
             $document.scrollToElement(someElement, offset, duration);
+            vm.menu_mobile_open = false;
+
         }
 
         function logout() {
@@ -178,6 +181,8 @@
             var elem = angular.element($window);
             vm.offTop = parseInt(this.pageYOffset) > 1000;
             porc = (this.pageYOffset * 100) / $document[0].body.scrollHeight;
+
+            vm.menu_mobile_open = false;
 
             if ((vm.lista && porc > 10) || porc > 70) {
                 addPostInfinite();

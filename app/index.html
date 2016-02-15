@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         [ng-cloak] {
             display: none;
@@ -145,7 +147,9 @@
 </head>
 <body ng-cloak ng-controller="AppController as appCtrl">
 <div ng-include="'./nav/nav.html'"></div>
-<img src="images/back_03.jpg" id="back-image" alt="">
+<div id="back-image">
+    <img src="images/back_03.jpg"  alt="">
+</div>
 
 <div ng-view id="index-view" autoscroll="true"></div>
 <div id="back-top" class="btn-custom" ng-if="appCtrl.offTop" ng-click="appCtrl.scrollTo('index-view');">

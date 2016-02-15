@@ -1,19 +1,40 @@
-<div ng-controller="NavCtrl as navCtrl" id="nav">
-    <div style="flex: 2;">
-        <img src="images/logo.gif" height="50px" ng-click="appCtrl.goTo('/main')" alt="" style="cursor: pointer">
-    </div>
-    <div style="flex: 8; display: flex;flex-direction: column">
-        <div style="display: flex;flex-direction: row; justify-content: flex-end; align-items: center; height: 50px">
+<div ng-controller="NavCtrl as navCtrl">
+    <div id="nav">
+        <div style="">
+            <img src="images/logo.gif" height="50px" ng-click="appCtrl.goTo('/main')" alt="" style="cursor: pointer">
+        </div>
 
+        <div style="display: flex; flex-direction: row; align-items: center; ">
             <div id="search-desktop-container">
                 <i class="fa-custom fa fa-search"></i>
                 <input id="search-desktop" ng-model="appCtrl.filtro" type="text" placeholder="Buscar..."></i>
             </div>
-            <i class="fa-custom fa fa-th-large" title="Mostrar tarjetas" ng-click="appCtrl.showLista(false)"></i>
-            <i class="fa-custom fa fa-list" title="Mostrar lista" ng-click="appCtrl.showLista(true)"></i>
-            <i class="fa-custom fa fa-sign-in" title="Login" ng-click="appCtrl.goTo('/login')"></i>
-            <i class="fa-custom fa fa-lock" title="Administración"
-               ng-click="appCtrl.goTo('/administracion');"></i>
+            <div style="display: flex;">
+                <div class="nav-button"
+
+                     ng-click="appCtrl.menu_mobile_open = !appCtrl.menu_mobile_open;"
+
+                     ng-class="{'nav-button-transformed':appCtrl.menu_mobile_open}">
+
+                    <div ng-class="{'nav-button-top-transformed':appCtrl.menu_mobile_open}"></div>
+
+                    <div ng-class="{'nav-button-mid-transformed':appCtrl.menu_mobile_open}"></div>
+
+                    <div ng-class="{'nav-button-bot-transformed':appCtrl.menu_mobile_open}"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="side-nav" ng-class="{'side-nav-closed': appCtrl.menu_mobile_open == false}">
+        <div style="display: flex;flex-direction: column; margin-top: 60px;">
+
+            <i class="fa-custom fa fa-home menu-item" title="Inicio" ng-click="appCtrl.goTo('/main'); appCtrl.menu_mobile_open =false;"><span>Inicio</span></i>
+            <i class="fa-custom fa fa-th-large menu-item" title="Mostrar tarjetas" ng-click="appCtrl.showLista(false); appCtrl.goTo('/main'); appCtrl.menu_mobile_open =false;"><span>Mostrar Tarjetas</span></i>
+            <i class="fa-custom fa fa-list menu-item" title="Mostrar lista" ng-click="appCtrl.showLista(true); appCtrl.goTo('/main'); appCtrl.menu_mobile_open =false;"><span>Mostrar Lista</span></i>
+            <i class="fa-custom fa fa-sign-in menu-item" title="Login" ng-click="appCtrl.goTo('/login'); appCtrl.menu_mobile_open =false;"><span>Login</span></i>
+            <i class="fa-custom fa fa-lock menu-item" title="Administración"
+               ng-click="appCtrl.goTo('/administracion');; appCtrl.menu_mobile_open =false;"><span>Administración</span></i>
         </div>
     </div>
 </div>
