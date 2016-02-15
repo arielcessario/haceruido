@@ -1,11 +1,30 @@
 <div ng-controller="AdministracionCtrl as administracionCtrl" style="margin-top: 100px;">
-    <div>
+    <div style="margin-bottom: 30px;">
+        <div>{{vm.user.email}}</div>
+        <div class="administracion-input">
+            <label>Nombre</label>
+            <input ng-model="administracionCtrl.user.name" type="text">
+        </div>
+        <div class="administracion-input">
+            <label>Password Anterior</label>
+            <input ng-model="administracionCtrl.password_anterior" type="text">
+        </div>
+        <div class="administracion-input">
+            <label>Nuevo Password</label>
+            <input ng-model="administracionCtrl.password" type="text">
+        </div>
+
+        <div style="margin-top: 10px;">
+            <button class="btn-custom" ng-click="administracionCtrl.saveUsuario()">Guardar Cambios</button>
+        </div>
+    </div>
+    <div ng-if="administracionCtrl.user.rol == 0">
         <div>
-            <div>
+            <div class="administracion-input">
                 <label>Titulo</label>
                 <input ng-model="administracionCtrl.post.value.titulo" type="text">
             </div>
-            <div>
+            <div class="administracion-input">
                 <label>Fecha</label>
                 <input ng-model="administracionCtrl.post.value.fecha" type="date">
             </div>
@@ -17,9 +36,9 @@
         </div>
 
         <div>
-            <button class="md-raised" ng-click="administracionCtrl.create()">Guardar</button>
+            <button class="btn-custom" ng-click="administracionCtrl.create()">Guardar</button>
             <!--<button class="md-raised" ng-click="administracionCtrl.remove()">Eliminar</button>-->
-            <button class="md-raised" ng-click="administracionCtrl.cancelar()">Cancelar</button>
+            <button class="btn-custom" ng-click="administracionCtrl.cancelar()">Cancelar</button>
         </div>
 
         <div class="main-post post-list"

@@ -32,7 +32,7 @@
             <i class="fa-custom fa fa-home menu-item" title="Inicio" ng-click="appCtrl.goTo('/main'); appCtrl.menu_mobile_open =false;"><span>Inicio</span></i>
             <i class="fa-custom fa fa-th-large menu-item" title="Mostrar tarjetas" ng-click="appCtrl.showLista(false); appCtrl.goTo('/main'); appCtrl.menu_mobile_open =false;"><span>Mostrar Tarjetas</span></i>
             <i class="fa-custom fa fa-list menu-item" title="Mostrar lista" ng-click="appCtrl.showLista(true); appCtrl.goTo('/main'); appCtrl.menu_mobile_open =false;"><span>Mostrar Lista</span></i>
-            <i class="fa-custom fa fa-sign-in menu-item" title="Login" ng-click="appCtrl.goTo('/login'); appCtrl.menu_mobile_open =false;"><span>Login</span></i>
+            <i class="fa-custom fa fa-sign-in menu-item" title="Login" ng-click="appCtrl.goTo('/login'); appCtrl.menu_mobile_open =false;"><span ng-if="navCtrl.isLogged">Logout</span><span ng-if="!navCtrl.isLogged">Login</span></i>
             <i class="fa-custom fa fa-lock menu-item" title="Administración"
                ng-click="appCtrl.goTo('/administracion');; appCtrl.menu_mobile_open =false;"><span>Administración</span></i>
         </div>

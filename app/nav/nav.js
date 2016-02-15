@@ -5,16 +5,14 @@
 
         .controller('NavCtrl', NavCtrl);
 
-    NavCtrl.$inject = [];
-    function NavCtrl() {
+    NavCtrl.$inject = ['$scope'];
+    function NavCtrl($scope) {
         var vm = this;
         var ref = new Firebase('https://estomehaceruido.firebaseio.com');
-        var authData = ref.getAuth();
-        if (authData) {
-            vm.isLogged = true;
-        }else{
-            vm.isLogged = false;
-        }
+
+        $scope.$watch('appCtrl.menu_mobile_open', function(){
+            vm.isLogged = ref.getAuth();
+        });
 
 
     }

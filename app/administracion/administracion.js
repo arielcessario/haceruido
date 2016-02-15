@@ -14,9 +14,13 @@
         vm.detalle = '';
         vm.posts = [];
         vm.key = '';
+        vm.rol = 1;
         vm.post = {value: {fecha: new Date()}};
+        vm.password = '';
+        vm.password_anterior = '';
 
         vm.selectedIndex = -1;
+        vm.user = {};
 
         var rootRef = new Firebase('https://estomehaceruido.firebaseio.com/');
         vm.authData = rootRef.getAuth();
@@ -26,15 +30,20 @@
         vm.cancelar = cancelar;
         vm.remove = remove;
         vm.selectPost = selectPost;
+        vm.saveUsuario = saveUsuario;
 
         if (vm.authData) {
             var refUser = new Firebase('https://estomehaceruido.firebaseio.com/users/' + vm.authData.uid);
             refUser.on('value', function (childSnapshot, prevChildKey) {
-                vm.rol = childSnapshot.val().rol;
-                if(vm.rol != 0){
-                    $location.path('/main');
-                }
+
+                vm.user = childSnapshot.val();
+                //console.log(vm.user);
+                //if(vm.rol != 0){
+                //    $location.path('/main');
+                //}
             });
+        } else {
+            $location.path('/main');
         }
 
 
@@ -66,31 +75,36 @@
 
         refFull.orderByChild("fecha").on('child_added', function (childSnapshot, prevChildKey) {
             // code to handle new child.
-            vm.posts.push({key: childSnapshot.key(), value: childSnapshot.val()});
-            console.log('added');
-            if (!$scope.$$phase) {
-                $scope.$apply();
+            if (vm.user.rol == 0) {
+                vm.posts.push({key: childSnapshot.key(), value: childSnapshot.val()});
+                console.log('added');
+                if (!$scope.$$phase) {
+                    $scope.$apply();
+                }
             }
         });
 
         refFull.on('child_changed', function (childSnapshot, prevChildKey) {
             // code to handle new child.
-            console.log('change');
-            if (vm.selectedIndex != -1) {
-                vm.posts[vm.selectedIndex].value = childSnapshot.val();
-            }
-            vm.post = {value: {fecha: new Date()}};
-            vm.posts.sort(function (a, b) {
-                // Turn your strings into dates, and then subtract them
-                // to get a value that is either negative, positive, or zero.
-                return new Date(a.value.fecha) - new Date(b.value.fecha);
-            });
-            if (!$scope.$$phase) {
-                $scope.$apply();
+            if (vm.user.rol == 0) {
+                console.log('change');
+                if (vm.selectedIndex != -1) {
+                    vm.posts[vm.selectedIndex].value = childSnapshot.val();
+                }
+                vm.post = {value: {fecha: new Date()}};
+                vm.posts.sort(function (a, b) {
+                    // Turn your strings into dates, and then subtract them
+                    // to get a value that is either negative, positive, or zero.
+                    return new Date(a.value.fecha) - new Date(b.value.fecha);
+                });
+                if (!$scope.$$phase) {
+                    $scope.$apply();
+                }
             }
         });
 
         refFull.on('child_removed', function (oldChildSnapshot) {
+
             // code to handle new child.
             console.log('removed');
             var n = vm.posts.indexOf(vm.post);
@@ -166,6 +180,43 @@
             vm.selectedIndex = vm.posts.indexOf(post);
             vm.post = angular.copy(post);
             vm.post.value.fecha = new Date(-1 * vm.post.value.fecha);
+
+        }
+
+        function saveUsuario() {
+            var refUser = new Firebase('https://estomehaceruido.firebaseio.com/users/' + vm.authData.uid);
+
+            refUser.update({name: vm.user.name}, function (error) {
+                if (error) {
+                    console.log('fallo update');
+                } else {
+                    console.log('update ok');
+                }
+            });
+
+            if(vm.password.replace(' ','').length != 0){
+                ref.changePassword({
+                    email: vm.user.email,
+                    oldPassword: vm.password_anterior,
+                    newPassword: vm.password
+                }, function(error) {
+                    if (error) {
+                        switch (error.code) {
+                            case "INVALID_PASSWORD":
+                                console.log("The specified user account password is incorrect.");
+                                break;
+                            case "INVALID_USER":
+                                console.log("The specified user account does not exist.");
+                                break;
+                            default:
+                                console.log("Error changing password:", error);
+                        }
+                    } else {
+                        console.log("User password changed successfully!");
+                    }
+                });
+            }
+
 
         }
 
