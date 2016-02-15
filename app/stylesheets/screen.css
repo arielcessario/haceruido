@@ -239,7 +239,7 @@ body {
 }
 /* line 227, ../sass/screen.scss */
 .text-administracion .ta-bind {
-  height: 400px !important;
+  min-height: 400px !important;
 }
 
 /* line 232, ../sass/screen.scss */
