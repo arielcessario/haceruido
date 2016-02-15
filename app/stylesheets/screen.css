@@ -185,6 +185,12 @@ body {
 }
 
 /* line 177, ../sass/screen.scss */
+.post-list:hover {
+  background-color: #562F2E;
+  color: white;
+}
+
+/* line 183, ../sass/screen.scss */
 .login, #registro {
   display: flex;
   justify-content: center;
@@ -192,26 +198,26 @@ body {
   margin-top: 30px;
 }
 
-/* line 187, ../sass/screen.scss */
+/* line 193, ../sass/screen.scss */
 .login-input-container {
   margin: 10px 0 10px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-/* line 192, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 .login-input-container input {
   min-width: 60%;
 }
 
-/* line 197, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 .fa-custom {
   color: white;
   margin: 0 10px 0 10px;
   cursor: pointer;
 }
 
-/* line 203, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
 .ta-text {
   height: 100px !important;
   min-height: 100px !important;
@@ -221,13 +227,13 @@ body {
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
-/* line 212, ../sass/screen.scss */
+/* line 218, ../sass/screen.scss */
 .ta-bind {
   background-color: white;
   font-size: 16px;
 }
 
-/* line 217, ../sass/screen.scss */
+/* line 223, ../sass/screen.scss */
 .btn-custom {
   border: 0 solid;
   background-color: #E65100;
@@ -238,19 +244,19 @@ body {
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
-/* line 227, ../sass/screen.scss */
+/* line 233, ../sass/screen.scss */
 #back-top {
   position: fixed;
   bottom: 40px;
   right: 40px;
   z-index: 10;
 }
-/* line 232, ../sass/screen.scss */
+/* line 238, ../sass/screen.scss */
 #back-top i {
   color: white;
 }
 
-/* line 237, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 .parrafo-in {
   -webkit-animation: parrafo-in 1s ease;
   -o-animation: parrafo-in 1s ease;
@@ -262,7 +268,7 @@ body {
   transform: translate(0px, 0);
 }
 
-/* line 248, ../sass/screen.scss */
+/* line 254, ../sass/screen.scss */
 .logo-main {
   min-width: 360px;
   width: 50%;
@@ -300,7 +306,7 @@ body {
     transform: translate(0px, 0);
   }
 }
-/* line 296, ../sass/screen.scss */
+/* line 302, ../sass/screen.scss */
 #nav {
   z-index: 100;
   width: 100%;
@@ -316,7 +322,7 @@ body {
   -webkit-transform: translateZ(0);
 }
 
-/* line 311, ../sass/screen.scss */
+/* line 317, ../sass/screen.scss */
 #side-nav {
   z-index: 90;
   height: 100%;
@@ -337,7 +343,7 @@ body {
   transition: all 0.4s;
 }
 
-/* line 332, ../sass/screen.scss */
+/* line 338, ../sass/screen.scss */
 .menu-item {
   margin: 5px 0 5px 10px;
   font-family: 'Poppins', sans-serif;
@@ -345,18 +351,18 @@ body {
   color: black;
   padding: 10px;
 }
-/* line 339, ../sass/screen.scss */
+/* line 345, ../sass/screen.scss */
 .menu-item span {
   margin-left: 15px;
 }
 
-/* line 346, ../sass/screen.scss */
+/* line 352, ../sass/screen.scss */
 .menu-item:hover {
   background-color: #562F2E;
   color: white;
 }
 
-/* line 351, ../sass/screen.scss */
+/* line 357, ../sass/screen.scss */
 .side-nav-closed {
   -webkit-transform: translateX(100%) !important;
   -moz-transform: translateX(100%) !important;
@@ -365,7 +371,7 @@ body {
   transform: translateX(100%) !important;
 }
 
-/* line 363, ../sass/screen.scss */
+/* line 369, ../sass/screen.scss */
 .nav-button {
   flex: 1;
   margin-right: 15px;
@@ -378,7 +384,7 @@ body {
   transform-style: preserve-3D;
   cursor: pointer;
 }
-/* line 378, ../sass/screen.scss */
+/* line 384, ../sass/screen.scss */
 .nav-button div {
   cursor: pointer;
   width: 26px;
@@ -392,7 +398,7 @@ body {
   -o-transition: all 0.4s;
   transition: all 0.4s;
 }
-/* line 392, ../sass/screen.scss */
+/* line 398, ../sass/screen.scss */
 .nav-button .nav-button-top-transformed {
   -webkit-transform: rotate(45deg) translateY(11px);
   -moz-transform: rotate(45deg) translateY(11px);
@@ -400,11 +406,11 @@ body {
   -o-transform: rotate(45deg) translateY(11px);
   transform: rotate(45deg) translateY(11px);
 }
-/* line 399, ../sass/screen.scss */
+/* line 405, ../sass/screen.scss */
 .nav-button .nav-button-mid-transformed {
   opacity: 0;
 }
-/* line 402, ../sass/screen.scss */
+/* line 408, ../sass/screen.scss */
 .nav-button .nav-button-bot-transformed {
   -webkit-transform: rotate(-45deg) translateY(-12px);
   -moz-transform: rotate(-45deg) translateY(-12px);
